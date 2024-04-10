@@ -29,8 +29,17 @@ steps:
         --verbosity Normal \
         --logger trx \
         --framework net8.0 \
-        --filter "Type!=E2E&Dependency!=Docker"
-    displayName: 'Run unit tests (.NET 8)'
+        --filter "FullyQualifiedName~Silverback.Tests.Core"
+    displayName: 'Run core unit tests (.NET 8)'
+  - script: |
+      dotnet test Silverback.sln \
+        --configuration $(buildConfiguration) \
+        --no-build \
+        --verbosity Normal \
+        --logger trx \
+        --framework net8.0 \
+        --filter "Type!=E2E&Dependency!=Docker&FullyQualifiedName!~Silverback.Tests.Core"
+    displayName: 'Run other unit tests (.NET 8)'
   - script: |
       dotnet test Silverback.sln \
         --configuration $(buildConfiguration) \
@@ -47,8 +56,17 @@ steps:
         --verbosity Normal \
         --logger trx \
         --framework net6.0 \
-        --filter "Type!=E2E&Dependency!=Docker"
-    displayName: 'Run unit tests (.NET 6)'
+        --filter "FullyQualifiedName~Silverback.Tests.Core"
+    displayName: 'Run core unit tests (.NET 6)'
+  - script: |
+        dotnet test Silverback.sln \
+        --configuration $(buildConfiguration) \
+        --no-build \
+        --verbosity Normal \
+        --logger trx \
+        --framework net6.0 \
+        --filter "Type!=E2E&Dependency!=Docker&FullyQualifiedName!~Silverback.Tests.Core"
+    displayName: 'Run other unit tests (.NET 6)'
   - script: |
       dotnet test Silverback.sln \
         --configuration $(buildConfiguration) \
