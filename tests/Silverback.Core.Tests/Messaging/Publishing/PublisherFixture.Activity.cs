@@ -14,7 +14,6 @@ using Xunit;
 
 namespace Silverback.Tests.Core.Messaging.Publishing;
 
-[Trait("CI", "skip")]
 public partial class PublisherFixture
 {
     [Fact]
