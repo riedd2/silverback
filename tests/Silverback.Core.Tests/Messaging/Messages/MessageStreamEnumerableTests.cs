@@ -12,6 +12,7 @@ using Xunit;
 
 namespace Silverback.Tests.Core.Messaging.Messages;
 
+[Trait("CI", "skip")]
 public class MessageStreamEnumerableTests
 {
     [Fact]

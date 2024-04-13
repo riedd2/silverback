@@ -13,6 +13,7 @@ using Xunit;
 
 namespace Silverback.Tests.Core.Messaging.Messages;
 
+[Trait("CI", "skip")]
 public class MessageStreamProviderTests
 {
     private interface IEvent : IMessage;

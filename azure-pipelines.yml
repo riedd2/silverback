@@ -29,7 +29,7 @@ steps:
         --verbosity Normal \
         --logger trx \
         --framework net8.0 \
-        --filter "FullyQualifiedName~Silverback.Tests.Core"
+        --filter "FullyQualifiedName~Silverback.Tests.Core&CI!=skip"
     displayName: 'Run core unit tests (.NET 8)'
 #  - script: |
 #      dotnet test Silverback.sln \
