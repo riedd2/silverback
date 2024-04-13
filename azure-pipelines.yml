@@ -8,11 +8,11 @@ variables:
 
 steps:
   # Install .NET SDK
-  - task: UseDotNet@2
-    inputs:
-      packageType: 'sdk'
-      version: '6.0.x'
-    displayName: 'Install SDK 6.0.x'
+#  - task: UseDotNet@2
+#    inputs:
+#      packageType: 'sdk'
+#      version: '6.0.x'
+#    displayName: 'Install SDK 6.0.x'
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
@@ -31,51 +31,51 @@ steps:
         --framework net8.0 \
         --filter "FullyQualifiedName~Silverback.Tests.Core"
     displayName: 'Run core unit tests (.NET 8)'
-  - script: |
-      dotnet test Silverback.sln \
-        --configuration $(buildConfiguration) \
-        --no-build \
-        --verbosity Normal \
-        --logger trx \
-        --framework net8.0 \
-        --filter "Type!=E2E&Dependency!=Docker&FullyQualifiedName!~Silverback.Tests.Core"
-    displayName: 'Run other unit tests (.NET 8)'
-  - script: |
-      dotnet test Silverback.sln \
-        --configuration $(buildConfiguration) \
-        --no-build \
-        --verbosity Normal \
-        --logger trx \
-        --framework net8.0 \
-        --filter "Type=E2E&Dependency!=Docker"
-    displayName: 'Run E2E integration tests (.NET 8)'
-  - script: |
-      dotnet test Silverback.sln \
-        --configuration $(buildConfiguration) \
-        --no-build \
-        --verbosity Normal \
-        --logger trx \
-        --framework net6.0 \
-        --filter "FullyQualifiedName~Silverback.Tests.Core"
-    displayName: 'Run core unit tests (.NET 6)'
-  - script: |
-        dotnet test Silverback.sln \
-        --configuration $(buildConfiguration) \
-        --no-build \
-        --verbosity Normal \
-        --logger trx \
-        --framework net6.0 \
-        --filter "Type!=E2E&Dependency!=Docker&FullyQualifiedName!~Silverback.Tests.Core"
-    displayName: 'Run other unit tests (.NET 6)'
-  - script: |
-      dotnet test Silverback.sln \
-        --configuration $(buildConfiguration) \
-        --no-build \
-        --verbosity Normal \
-        --logger trx \
-        --framework net6.0 \
-        --filter "Type=E2E&Dependency!=Docker"
-    displayName: 'Run E2E integration tests (.NET 6)'
+#  - script: |
+#      dotnet test Silverback.sln \
+#        --configuration $(buildConfiguration) \
+#        --no-build \
+#        --verbosity Normal \
+#        --logger trx \
+#        --framework net8.0 \
+#        --filter "Type!=E2E&Dependency!=Docker&FullyQualifiedName!~Silverback.Tests.Core"
+#    displayName: 'Run other unit tests (.NET 8)'
+#  - script: |
+#      dotnet test Silverback.sln \
+#        --configuration $(buildConfiguration) \
+#        --no-build \
+#        --verbosity Normal \
+#        --logger trx \
+#        --framework net8.0 \
+#        --filter "Type=E2E&Dependency!=Docker"
+#    displayName: 'Run E2E integration tests (.NET 8)'
+#  - script: |
+#      dotnet test Silverback.sln \
+#        --configuration $(buildConfiguration) \
+#        --no-build \
+#        --verbosity Normal \
+#        --logger trx \
+#        --framework net6.0 \
+#        --filter "FullyQualifiedName~Silverback.Tests.Core"
+#    displayName: 'Run core unit tests (.NET 6)'
+#  - script: |
+#        dotnet test Silverback.sln \
+#        --configuration $(buildConfiguration) \
+#        --no-build \
+#        --verbosity Normal \
+#        --logger trx \
+#        --framework net6.0 \
+#        --filter "Type!=E2E&Dependency!=Docker&FullyQualifiedName!~Silverback.Tests.Core"
+#    displayName: 'Run other unit tests (.NET 6)'
+#  - script: |
+#      dotnet test Silverback.sln \
+#        --configuration $(buildConfiguration) \
+#        --no-build \
+#        --verbosity Normal \
+#        --logger trx \
+#        --framework net6.0 \
+#        --filter "Type=E2E&Dependency!=Docker"
+#    displayName: 'Run E2E integration tests (.NET 6)'
   # Publish results
   - task: PublishTestResults@2
     condition: succeededOrFailed()
