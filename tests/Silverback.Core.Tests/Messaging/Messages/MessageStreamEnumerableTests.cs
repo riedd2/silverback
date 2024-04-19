@@ -46,7 +46,6 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsyncGetAsyncEnumeratorAndCompleteAsync_SomeMessages_MessagesPushedAndReceived()
     {
         MessageStreamEnumerable<Message> stream = new();
