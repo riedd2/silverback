@@ -48,7 +48,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsync_Messages_ReturnedAfterMessagesProcessed()
     {
         MessageStreamProvider<IMessage> provider = new();
