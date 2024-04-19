@@ -278,7 +278,6 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task Dispose_TryPushingAfterDispose_ExceptionThrown()
     {
         MessageStreamEnumerable<Message> stream = new();
