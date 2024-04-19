@@ -108,7 +108,6 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsync_WhileAsyncEnumerating_BackpressureIsHandled()
     {
         MessageStreamEnumerable<Message> stream = new();
