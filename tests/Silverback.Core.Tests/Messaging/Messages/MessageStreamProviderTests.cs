@@ -73,7 +73,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsync_MessageWithoutMatchingStream_ExceptionThrown()
     {
         MessageStreamProvider<IMessage> provider = new();
@@ -88,7 +87,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsync_MessageWithoutMatchingStreamDisablingException_NoExceptionThrown()
     {
         MessageStreamProvider<IMessage> provider = new();
