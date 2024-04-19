@@ -217,7 +217,6 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     [SuppressMessage("ReSharper", "AccessToDisposedClosure", Justification = "The method waits for the async task to complete.")]
     public async Task Abort_WhileAsyncEnumerating_EnumerationAborted()
     {
