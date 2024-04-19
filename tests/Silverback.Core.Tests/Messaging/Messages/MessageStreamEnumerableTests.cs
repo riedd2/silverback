@@ -243,7 +243,6 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task Abort_WhilePushing_PushAborted()
     {
         bool pushed = false;
