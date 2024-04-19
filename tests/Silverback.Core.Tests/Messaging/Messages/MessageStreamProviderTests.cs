@@ -101,7 +101,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsync_Envelopes_RelayedToStream()
     {
         MessageStreamProvider<TestEnvelope> provider = new();
@@ -123,7 +122,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsync_Envelopes_UnwrappedAndRelayedToMatchingStreams()
     {
         MessageStreamProvider<TestEnvelope> provider = new();
@@ -153,7 +151,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsync_EnvelopeWithoutMatchingStream_ExceptionThrown()
     {
         MessageStreamProvider<IEnvelope> provider = new();
