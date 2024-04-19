@@ -13,7 +13,6 @@ using Xunit;
 
 namespace Silverback.Tests.Core.Messaging.Messages;
 
-[Trait("CI", "skip")]
 public class MessageStreamProviderTests
 {
     private interface IEvent : IMessage;
@@ -49,6 +48,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_Messages_ReturnedAfterMessagesProcessed()
     {
         MessageStreamProvider<IMessage> provider = new();
@@ -74,6 +74,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_MessageWithoutMatchingStream_ExceptionThrown()
     {
         MessageStreamProvider<IMessage> provider = new();
@@ -88,6 +89,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_MessageWithoutMatchingStreamDisablingException_NoExceptionThrown()
     {
         MessageStreamProvider<IMessage> provider = new();
@@ -102,6 +104,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_Envelopes_RelayedToStream()
     {
         MessageStreamProvider<TestEnvelope> provider = new();
@@ -123,6 +126,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_Envelopes_UnwrappedAndRelayedToMatchingStreams()
     {
         MessageStreamProvider<TestEnvelope> provider = new();
@@ -152,6 +156,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_EnvelopeWithoutMatchingStream_ExceptionThrown()
     {
         MessageStreamProvider<IEnvelope> provider = new();
@@ -166,6 +171,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_WhileEnumeratingStream_BackpressureIsHandled()
     {
         MessageStreamProvider<int> provider = new();
@@ -198,6 +204,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_WhileAsyncEnumeratingStream_BackpressureIsHandled()
     {
         MessageStreamProvider<int> provider = new();
@@ -230,6 +237,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_WhileEnumeratingMultipleStreams_BackpressureIsHandled()
     {
         MessageStreamProvider<int> provider = new();
@@ -273,6 +281,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_WhileAsyncEnumeratingMultipleStreams_BackpressureIsHandled()
     {
         MessageStreamProvider<int> provider = new();
@@ -316,6 +325,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task CompleteAsync_WhileEnumeratingStream_EnumerationCompleted()
     {
         int? count = null;
@@ -341,6 +351,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task CompleteAsync_WhileAsyncEnumeratingStreams_EnumerationCompleted()
     {
         int? count = null;
@@ -366,6 +377,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task Abort_WhileEnumeratingStream_EnumerationAborted()
     {
         int? count = null;
@@ -393,6 +405,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task Abort_WhileAsyncEnumeratingStreams_EnumerationAborted()
     {
         int? count = null;
@@ -420,6 +433,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task CreateLazyStream_PushingMessages_StreamCreatedWhenMatchingMessagePushed()
     {
         MessageStreamProvider<IEvent> provider = new();
@@ -457,6 +471,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public void CreateLazyStream_CalledTwiceForSameType_NewInstanceReturned()
     {
         MessageStreamProvider<IMessage> provider = new();
@@ -467,6 +482,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public void CreateLazyStream_GenericAndNonGenericVersions_EquivalentInstanceReturned()
     {
         MessageStreamProvider<IMessage> provider = new();
@@ -478,6 +494,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public void CreateStream_CalledTwiceForSameType_NewInstanceReturned()
     {
         MessageStreamProvider<IMessage> provider = new();
@@ -488,6 +505,7 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public void CreateStream_GenericAndNonGenericVersions_EquivalentInstanceReturned()
     {
         MessageStreamProvider<IMessage> provider = new();
