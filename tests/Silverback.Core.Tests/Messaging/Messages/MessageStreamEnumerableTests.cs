@@ -12,7 +12,6 @@ using Xunit;
 
 namespace Silverback.Tests.Core.Messaging.Messages;
 
-[Trait("CI", "skip")]
 public class MessageStreamEnumerableTests
 {
     [Fact]
@@ -47,6 +46,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsyncGetAsyncEnumeratorAndCompleteAsync_SomeMessages_MessagesPushedAndReceived()
     {
         MessageStreamEnumerable<Message> stream = new();
@@ -78,6 +78,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_WhileEnumerating_BackpressureIsHandled()
     {
         MessageStreamEnumerable<Message> stream = new();
@@ -109,6 +110,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task PushAsync_WhileAsyncEnumerating_BackpressureIsHandled()
     {
         MessageStreamEnumerable<Message> stream = new();
@@ -140,6 +142,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     [SuppressMessage("ReSharper", "AccessToDisposedClosure", Justification = "The method waits for the async task to complete.")]
     public async Task CompleteAsync_WhileEnumerating_EnumerationCompleted()
     {
@@ -166,6 +169,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     [SuppressMessage("ReSharper", "AccessToDisposedClosure", Justification = "The method waits for the async task to complete.")]
     public async Task CompleteAsync_WhileAsyncEnumerating_EnumerationCompleted()
     {
@@ -192,6 +196,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     [SuppressMessage("ReSharper", "AccessToDisposedClosure", Justification = "The method waits for the async task to complete.")]
     public async Task Abort_WhileEnumerating_EnumerationAborted()
     {
@@ -219,6 +224,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     [SuppressMessage("ReSharper", "AccessToDisposedClosure", Justification = "The method waits for the async task to complete.")]
     public async Task Abort_WhileAsyncEnumerating_EnumerationAborted()
     {
@@ -245,6 +251,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task Abort_WhilePushing_PushAborted()
     {
         bool pushed = false;
@@ -269,6 +276,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task CompleteAsync_TryPushingAfterComplete_ExceptionThrown()
     {
         MessageStreamEnumerable<Message> stream = new();
@@ -280,6 +288,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task Dispose_TryPushingAfterDispose_ExceptionThrown()
     {
         MessageStreamEnumerable<Message> stream = new();
