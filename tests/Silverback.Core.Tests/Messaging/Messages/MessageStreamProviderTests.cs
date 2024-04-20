@@ -165,7 +165,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsync_WhileEnumeratingStream_BackpressureIsHandled()
     {
         MessageStreamProvider<int> provider = new();
@@ -198,7 +197,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsync_WhileAsyncEnumeratingStream_BackpressureIsHandled()
     {
         MessageStreamProvider<int> provider = new();
@@ -231,7 +229,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsync_WhileEnumeratingMultipleStreams_BackpressureIsHandled()
     {
         MessageStreamProvider<int> provider = new();
@@ -275,7 +272,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task PushAsync_WhileAsyncEnumeratingMultipleStreams_BackpressureIsHandled()
     {
         MessageStreamProvider<int> provider = new();
