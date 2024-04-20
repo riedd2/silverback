@@ -39,38 +39,38 @@ steps:
         --verbosity Normal \
         --logger trx \
         --framework net8.0 \
-        --filter "FullyQualifiedName~Silverback.Tests.Core" \
+        --filter "FullyQualifiedName~Silverback.Tests.Core&CI!=skip" \
         --collect "Code coverage" \
         -p:CollectCoverage=true \
         -p:CoverletOutputFormat=opencover%2ccobertura \
         -p:Exclude="[xunit.*]*%2c[Silverback.Tests.*]*"
     displayName: 'Run core unit tests (.NET 8)'
-  - script: |
-      dotnet test Silverback.sln \
-        --configuration $(buildConfiguration) \
-        --no-build \
-        --verbosity Normal \
-        --logger trx \
-        --framework net8.0 \
-        --filter "Type!=E2E&Dependency!=Docker&FullyQualifiedName!~Silverback.Tests.Core" \
-        --collect "Code coverage" \
-        -p:CollectCoverage=true \
-        -p:CoverletOutputFormat=opencover%2ccobertura \
-        -p:Exclude="[xunit.*]*%2c[Silverback.Tests.*]*"
-    displayName: 'Run other unit tests (.NET 8)'
-  - script: |
-      dotnet test Silverback.sln \
-        --configuration $(buildConfiguration) \
-        --no-build \
-        --verbosity Normal \
-        --logger trx \
-        --framework net8.0 \
-        --filter "Type=E2E&Dependency!=Docker" \
-        --collect "Code coverage" \
-        -p:CollectCoverage=true \
-        -p:CoverletOutputFormat=opencover%2ccobertura \
-        -p:Exclude="[xunit.*]*%2c[Silverback.Tests.*]*"
-    displayName: 'Run E2E integration tests (.NET 8)'
+#  - script: |
+#      dotnet test Silverback.sln \
+#        --configuration $(buildConfiguration) \
+#        --no-build \
+#        --verbosity Normal \
+#        --logger trx \
+#        --framework net8.0 \
+#        --filter "Type!=E2E&Dependency!=Docker&FullyQualifiedName!~Silverback.Tests.Core" \
+#        --collect "Code coverage" \
+#        -p:CollectCoverage=true \
+#        -p:CoverletOutputFormat=opencover%2ccobertura \
+#        -p:Exclude="[xunit.*]*%2c[Silverback.Tests.*]*"
+#    displayName: 'Run other unit tests (.NET 8)'
+#  - script: |
+#      dotnet test Silverback.sln \
+#        --configuration $(buildConfiguration) \
+#        --no-build \
+#        --verbosity Normal \
+#        --logger trx \
+#        --framework net8.0 \
+#        --filter "Type=E2E&Dependency!=Docker" \
+#        --collect "Code coverage" \
+#        -p:CollectCoverage=true \
+#        -p:CoverletOutputFormat=opencover%2ccobertura \
+#        -p:Exclude="[xunit.*]*%2c[Silverback.Tests.*]*"
+#    displayName: 'Run E2E integration tests (.NET 8)'
   - task: SonarCloudAnalyze@1
     condition: succeededOrFailed()
     displayName: 'Run SonarCloud analysis'

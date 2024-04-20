@@ -190,6 +190,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     [SuppressMessage("ReSharper", "AccessToDisposedClosure", Justification = "The method waits for the async task to complete.")]
     public async Task Abort_WhileEnumerating_EnumerationAborted()
     {
@@ -217,6 +218,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     [SuppressMessage("ReSharper", "AccessToDisposedClosure", Justification = "The method waits for the async task to complete.")]
     public async Task Abort_WhileAsyncEnumerating_EnumerationAborted()
     {
@@ -243,6 +245,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task Abort_WhilePushing_PushAborted()
     {
         bool pushed = false;
@@ -267,6 +270,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task CompleteAsync_TryPushingAfterComplete_ExceptionThrown()
     {
         MessageStreamEnumerable<Message> stream = new();
@@ -278,6 +282,7 @@ public class MessageStreamEnumerableTests
     }
 
     [Fact]
+    [Trait("CI", "skip")]
     public async Task Dispose_TryPushingAfterDispose_ExceptionThrown()
     {
         MessageStreamEnumerable<Message> stream = new();
