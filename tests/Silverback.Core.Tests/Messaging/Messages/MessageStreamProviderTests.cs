@@ -315,7 +315,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task CompleteAsync_WhileEnumeratingStream_EnumerationCompleted()
     {
         int? count = null;
@@ -341,7 +340,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task CompleteAsync_WhileAsyncEnumeratingStreams_EnumerationCompleted()
     {
         int? count = null;
