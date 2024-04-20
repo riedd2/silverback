@@ -365,7 +365,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task Abort_WhileEnumeratingStream_EnumerationAborted()
     {
         int? count = null;
@@ -393,7 +392,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task Abort_WhileAsyncEnumeratingStreams_EnumerationAborted()
     {
         int? count = null;
