@@ -421,7 +421,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task CreateLazyStream_PushingMessages_StreamCreatedWhenMatchingMessagePushed()
     {
         MessageStreamProvider<IEvent> provider = new();
@@ -459,7 +458,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public void CreateLazyStream_CalledTwiceForSameType_NewInstanceReturned()
     {
         MessageStreamProvider<IMessage> provider = new();
@@ -470,7 +468,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public void CreateLazyStream_GenericAndNonGenericVersions_EquivalentInstanceReturned()
     {
         MessageStreamProvider<IMessage> provider = new();
@@ -482,7 +479,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public void CreateStream_CalledTwiceForSameType_NewInstanceReturned()
     {
         MessageStreamProvider<IMessage> provider = new();
@@ -493,7 +489,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public void CreateStream_GenericAndNonGenericVersions_EquivalentInstanceReturned()
     {
         MessageStreamProvider<IMessage> provider = new();
