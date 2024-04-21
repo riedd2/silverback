@@ -419,7 +419,6 @@ public class MessageStreamProviderTests
     }
 
     [Fact]
-    [Trait("CI", "skip")]
     public async Task CreateLazyStream_PushingMessages_StreamCreatedWhenMatchingMessagePushed()
     {
         MessageStreamProvider<IEvent> provider = new();
